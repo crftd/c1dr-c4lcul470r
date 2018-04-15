@@ -4,7 +4,7 @@ cache: yarn
 node_js: 9.9
 git:
   depth: 2
-script: yarn lint && yarn build
+script: yarn lint && yarn test && yarn build:prod
 deploy:
   provider: pages
   local_dir: dist
