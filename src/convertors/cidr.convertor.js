@@ -1,4 +1,4 @@
-import { calculateSubnetMask } from 'ip-subnet-calculator';
+import { calculateSubnetMask, calculate } from 'ip-subnet-calculator';
 
 const getIpRange = (cidr) => {
   const cidrRegex = /(\d.*)\/(\d+)/gi;
@@ -9,4 +9,9 @@ const getIpRange = (cidr) => {
   };
 };
 
-export default { getIpRange };
+const getCIDR = (ipLow, ipHigh) => {
+  const { prefixMaskStr, prefixSize } = calculate(ipLow, ipHigh);
+  return `${prefixMaskStr}/${prefixSize}`;
+};
+
+export default { getIpRange, getCIDR };

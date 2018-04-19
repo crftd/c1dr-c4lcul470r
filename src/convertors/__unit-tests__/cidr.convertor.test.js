@@ -20,19 +20,34 @@ describe('cidr.calculator', () => {
 
   const mockIpSubnetCalculator = {
     calculateSubnetMask: () => expectedResult,
+    calculate: () => expectedResult,
   };
   jest.mock('ip-subnet-calculator', () => mockIpSubnetCalculator);
+  const cidrCalculator = require('../cidr.convertor').default;
 
   test('getIpRange', () => {
+    // Arrange
     const expectedIpRange = {
       ipLow: expectedIpLowStr,
       ipHigh: expectedIpHighStr,
     };
     const expectedCIDR = `${expectedPrefixMaskStr}/${expectedPrefixSize}`;
-    const cidrCalculator = require('../cidr.convertor').default;
+
     // Act
     const actualIpRange = cidrCalculator.getIpRange(expectedCIDR);
+
     // Assert
     expect(actualIpRange).toEqual(expectedIpRange);
+  });
+
+  test('getCidr', () => {
+    // Arrange
+    const expectedCIDR = `${expectedPrefixMaskStr}/${expectedPrefixSize}`;
+
+    // Act
+    const actualCidr = cidrCalculator.getCIDR(expectedIpLowStr, expectedIpHighStr);
+
+    // Assert
+    expect(actualCidr).toEqual(expectedCIDR);
   });
 });
