@@ -7,20 +7,28 @@
 
 ## Build Setup
 
+### install dependencies
 ``` bash
-# install dependencies
 yarn install
+```
 
-# serve with hot reload at localhost:8080
+### serve with hot reload at localhost:8080
+```bash
 yarn dev
+```
 
-# build for production with minification
+### build for production with minification
+```bash
 yarn build:prod
+```
 
-# build for production and view the bundle analyzer report
+### build for production and view the bundle analyzer report
+```bash
 npm run build --report
+```
 
-# run unit tests
+### run unit tests
+```bash
 yarn run unit
 ```
 
