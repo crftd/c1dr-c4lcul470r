@@ -42,7 +42,7 @@
     "eslint-loader": "*",
     "eslint-plugin-import": "*",
     "eslint-plugin-vue": "*",
-    "extract-text-webpack-plugin": "*",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "*",
     "friendly-errors-webpack-plugin": "*",
     "html-webpack-plugin": "*",
