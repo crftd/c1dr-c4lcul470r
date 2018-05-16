@@ -13,7 +13,7 @@ describe('App component', () => {
       },
     };
     // Act
-    const actualApp = require('../App.vue');
+    const actualApp = require('../App.vue').default;
     // Assert
     expect(actualApp).toEqual(expect.objectContaining(expectedApp));
   });

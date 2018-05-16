@@ -1,7 +1,7 @@
 language: node_js
 sudo: false
 cache: yarn
-node_js: 9.9
+node_js: 10
 git:
   depth: 2
 script: yarn lint && yarn test && yarn build:prod
